@@ -9,3 +9,4 @@ Project is structured as follows:
 *    /src/main/java/com/edgars/currency_calculator/util/ contains utility classes for converting from the lb.lt XML schema to Java objects.
 *    /src/main/java/com/edgars/currency_calculator/ contains the core application. Rate.java is the base class containting an exchange rate at a specific date. This object is created from the utility classes and saved in the database.
     
+![Screenshot](Screenshot.png "Screenshot")
