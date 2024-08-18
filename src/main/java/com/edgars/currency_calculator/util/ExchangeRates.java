@@ -14,7 +14,8 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "FxRates", namespace = "http://www.lb.lt/WebServices/FxRates")
 public class ExchangeRates {
-    ExchangeRates() {}
+    ExchangeRates() {
+    }
 
     private List<ExchangeRate> exchangeRates;
 
@@ -23,13 +24,13 @@ public class ExchangeRates {
     }
 
     @JacksonXmlElementWrapper(useWrapping = false)
-    @JacksonXmlProperty(localName =  "FxRate")
+    @JacksonXmlProperty(localName = "FxRate")
     public void setExchangeRates(List<ExchangeRate> exchangeRates) {
         this.exchangeRates = exchangeRates;
     }
-    
+
     @Override
-    public String  toString() {
+    public String toString() {
         return "Exchangerates" + exchangeRates.toString();
     }
 }

@@ -7,15 +7,11 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 
-
-
-
 public class ExchangeRate {
 
   private String date;
   private String tp;
   private List<CurrencyAmount> currencyAmounts;
-
 
   ExchangeRate(@JsonProperty("Tp") String tp, @JsonProperty("Dt") String date) {
 
@@ -23,17 +19,16 @@ public class ExchangeRate {
     this.tp = tp;
   }
 
- 
   public String getTp() {
-  return tp;
-}
+    return tp;
+  }
 
-@JsonProperty("Tp")
-public void setTp(String tp) {
-  this.tp = tp;
-}
- 
-   public String getDate() {
+  @JsonProperty("Tp")
+  public void setTp(String tp) {
+    this.tp = tp;
+  }
+
+  public String getDate() {
     return date;
   }
 
@@ -45,8 +40,9 @@ public void setTp(String tp) {
   public List<CurrencyAmount> getCurrencyAmounts() {
     return currencyAmounts;
   }
-@JacksonXmlElementWrapper(useWrapping = false)
-@JsonProperty("CcyAmt")
+
+  @JacksonXmlElementWrapper(useWrapping = false)
+  @JsonProperty("CcyAmt")
   public void setCurrencyAmounts(List<CurrencyAmount> currencyAmounts) {
     this.currencyAmounts = currencyAmounts;
   }
@@ -59,7 +55,7 @@ public void setTp(String tp) {
     if (!(o instanceof ExchangeRate))
       return false;
     ExchangeRate exchangeRate = (ExchangeRate) o;
-    return Objects.equals(this.date, exchangeRate.date) ;
+    return Objects.equals(this.date, exchangeRate.date);
   }
 
   @Override
@@ -69,11 +65,7 @@ public void setTp(String tp) {
 
   @Override
   public String toString() {
-    return "ExchangeRate{" +", date=" + this.date + " tp= " + this.tp + " ccys= " + this.currencyAmounts +  '}';
+    return "ExchangeRate{" + ", date=" + this.date + " tp= " + this.tp + " ccys= " + this.currencyAmounts + '}';
   }
-
-
-
-
 
 }

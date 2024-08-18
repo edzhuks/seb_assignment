@@ -14,12 +14,12 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 @Entity
 @XmlRootElement(name = "CcyAmt")
 public class CurrencyAmount {
-     private @Id
-  @GeneratedValue Long id;
+  private @Id @GeneratedValue Long id;
   private String name;
   private float rate;
- 
-  CurrencyAmount() {}
+
+  CurrencyAmount() {
+  }
 
   CurrencyAmount(String name, float rate) {
     this.name = name;
@@ -43,7 +43,6 @@ public class CurrencyAmount {
     this.rate = value;
   }
 
-
   public void setId(Long id) {
     this.id = id;
   }
@@ -52,9 +51,6 @@ public class CurrencyAmount {
   public void setName(String name) {
     this.name = name;
   }
-
-
-  
 
   @Override
   public int hashCode() {
